@@ -4,12 +4,18 @@
  * Front Controller 
  */
 
-// 	Require the controller class
-require '../App/Controllers/Posts.php';
-//	Require the router class
-require '../Core/Router.php';
+/**
+ * Autoloader
+ */
+spl_autoload_register(function ($class) {
+    $root = dirname(__DIR__);   // get the parent directory
+    $file = $root . '/' . str_replace('\\', '/', $class) . '.php';
+    if (is_readable($file)) {
+        require $root . '/' . str_replace('\\', '/', $class) . '.php';
+    }
+});
 
-$router = new Router();
+$router = new Core\Router();
 
 $router->add('',[
 	'controller' => 'Home',
