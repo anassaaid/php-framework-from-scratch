@@ -1,7 +1,9 @@
 <?php
 
 /**
- * Front Controller 
+ * Front controller
+ *
+ * PHP version 5.4
  */
 
 /**
@@ -15,15 +17,15 @@ spl_autoload_register(function ($class) {
     }
 });
 
+
+/**
+ * Routing
+ */
 $router = new Core\Router();
 
-$router->add('',[
-	'controller' => 'Home',
-	'action' => 'index'
-]);
-
+// Add the routes
+$router->add('', ['controller' => 'Home', 'action' => 'index']);
 $router->add('{controller}/{action}');
 $router->add('{controller}/{id:\d+}/{action}');
-$router->add('admin/{action}/{controller}');
-
+    
 $router->dispatch($_SERVER['QUERY_STRING']);
