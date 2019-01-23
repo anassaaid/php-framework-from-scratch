@@ -1,6 +1,8 @@
 <?php
 namespace App\Controllers;
 
+use \Core\View;
+
 class Home extends \Core\Controller{
 
 	/**
@@ -10,7 +12,7 @@ class Home extends \Core\Controller{
      */
     protected function before()
     {
-        echo "(before) ";
+        // echo "(before) ";
         //do some code;
     }
 
@@ -21,12 +23,12 @@ class Home extends \Core\Controller{
      */
     protected function after()
     {
-        echo " (after)";
+        // echo " (after)";
         //do some code;
     }
 
 	public function indexAction(){
-		echo "Hello from the index action of the Home controller";
+		View::render("Home/index.php");
 	}
 
 	public function editAction(){
