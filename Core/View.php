@@ -16,8 +16,10 @@ class View
      *
      * @return void
      */
-    public static function render($view)
+    public static function render($view, $arg = [])
     {
+        extract($arg, EXTR_SKIP); //  EXTR_SKIP : Lors d'une collision, ne pas réécrire la variable existante.
+
         $file = "../App/Views/$view";  // relative to Core directory
 
         if (is_readable($file)) {

@@ -28,7 +28,10 @@ class Home extends \Core\Controller{
     }
 
 	public function indexAction(){
-		View::render("Home/index.php");
+		View::render("Home/index.php",[
+            'name' => 'Anas',
+            'colors' => ['Red', 'Blue', 'Green']
+        ]);
 	}
 
 	public function editAction(){
