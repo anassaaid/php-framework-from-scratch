@@ -3,16 +3,11 @@ namespace App\Models;
 
 use PDO;
 
-class Post{
+class Post extends \Core\Model {
 
 	public static function getAll(){
-		$host = 'localhost';
-		$dbname = 'php_framework_from_scratch';
-		$username = 'root';
-		$password = '';
-
 		try{
-			$db = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
+			$db = static::getDb();
 
 			$stm = $db->query('select * from posts');
 			$results = $stm->fetchAll(PDO::FETCH_ASSOC);
