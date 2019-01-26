@@ -1,0 +1,14 @@
+{
+    "name": "Huge-coders/php-framework-from-scratch",
+    "description": "A PHP Framework made from scratch",
+    "authors": [
+        {
+            "name": "anas saaid",
+            "email": "anassaaid@gmail.com"
+        }
+    ],
+    "require": {
+    	"phpmailer/phpmailer": "~5.2",
+    	"twig/twig": "~1.0" 
+    }
+}

@@ -3,8 +3,13 @@
 /**
  * Front controller
  *
- * PHP version 5.4
  */
+
+/**
+ * Twig 
+ */
+require "../vendor/autoload.php";
+Twig_Autoloader::register();
 
 /**
  * Autoloader
